@@ -40,28 +40,28 @@ export default function TabLayout() {
             }}
         >
             <Tabs.Screen
-                name='Home'
+                name='index'
                 options={{
                     title: 'Home',
                     tabBarIcon: ({ focused }) => <TabBarIcon title="Home" icon={images.home} focused={focused} />
                 }}
             />
             <Tabs.Screen
-                name='Search'
+                name='search'
                 options={{
                     title: 'Search',
                     tabBarIcon: ({ focused }) => <TabBarIcon title="Search" icon={images.search} focused={focused} />
                 }}
             />
             <Tabs.Screen
-                name='Cart'
+                name='cart'
                 options={{
                     title: 'Cart',
                     tabBarIcon: ({ focused }) => <TabBarIcon title="Cart" icon={images.bag} focused={focused} />
                 }}
             />
             <Tabs.Screen
-                name='Profile'
+                name='profile'
                 options={{
                     title: 'Profile',
                     tabBarIcon: ({ focused }) => <TabBarIcon title="Profile" icon={images.person} focused={focused} />
