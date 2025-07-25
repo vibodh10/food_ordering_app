@@ -35,7 +35,7 @@ export interface CartItemType {
     price: number;
     image_url: string;
     quantity: number;
-    customizations?: CartCustomization[];
+    customisations?: CartCustomization[];
 }
 
 export interface CartStore {
@@ -47,6 +47,7 @@ export interface CartStore {
     clearCart: () => void;
     getTotalItems: () => number;
     getTotalPrice: () => number;
+    getQuantity: (id: string, customizations: CartCustomization[]) => void;
 }
 
 interface TabBarIconProps {

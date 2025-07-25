@@ -11,7 +11,8 @@ export const appwriteConfig = {
     menuCollectionId: '6870007b001bdeafa1d2',
     customisationsCollectionId: '687001cd00066880dab3',
     menuCustomisationsCollectionId: '6870030500092b4a14fb',
-    bucketId: '68700d62000ab9bdf951'
+    bucketId: '68700d62000ab9bdf951',
+    ordersCollectionId: '687b72ff0004d60c254c',
 }
 
 export const client = new Client();
@@ -107,4 +108,25 @@ export const getCategories = async () => {
     } catch (e) {
         throw new Error(e as string);
     }
+}
+
+export const createOrders = async ({
+    name,
+    totalPrice,
+    items,
+}: {
+    name: string;
+    totalPrice: number;
+    items: number;
+}) => {
+    await databases.createDocument(
+        appwriteConfig.databaseId,
+        appwriteConfig.ordersCollectionId,
+        ID.unique(),
+        {
+            menuItem: name,
+            totalPrice: totalPrice,
+            items: items,
+        }
+    )
 }

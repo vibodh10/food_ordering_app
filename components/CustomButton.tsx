@@ -1,7 +1,8 @@
 import {View, Text, TouchableOpacity, ActivityIndicator} from 'react-native'
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {CustomButtonProps} from "@/type";
 import cn from "clsx";
+import {useStripe} from "@stripe/stripe-react-native";
 
 const CustomButton = ({
     onPress,
@@ -12,7 +13,10 @@ const CustomButton = ({
     isLoading = false
 }: CustomButtonProps) => {
     return (
-        <TouchableOpacity className={cn('custom-btn', style)} onPress={onPress}>
+        <TouchableOpacity
+            className={cn('custom-btn', style)}
+            onPress={onPress}
+        >
             {leftIcon}
 
             <View className="flex-center flex-row">
