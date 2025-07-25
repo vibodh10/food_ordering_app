@@ -4,9 +4,7 @@ import {useCartStore} from "@/store/cart.store";
 import CustomHeader from "@/components/CustomHeader";
 import {PaymentInfoStripeProps} from "@/type";
 import cn from "clsx";
-import CustomButton from "@/components/CustomButton";
 import CartItem from "@/components/CartItem";
-import {useEffect, useState} from "react";
 import {StripeProvider} from "@stripe/stripe-react-native";
 import Payment from "@/components/Payment";
 import {useAuthStore} from "@/store/auth.store";
@@ -28,15 +26,13 @@ const PaymentInfoStripe = ({
 );
 
 const Cart = () => {
-    const { items, getTotalItems, getTotalPrice, getQuantity } = useCartStore();
+    const { items, getTotalItems, getTotalPrice } = useCartStore();
 
     const totalItems = getTotalItems();
     const totalPrice = getTotalPrice();
     const { user } = useAuthStore();
 
     console.log(items[0].price);
-
-    const openPaymentSheet = async () => {};
 
     return (
         <StripeProvider

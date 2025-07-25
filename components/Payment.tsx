@@ -28,7 +28,7 @@ const Payment = ({
 
     const initializePaymentSheet = async () => {
         try {
-            const response = await fetchAPI('/api/create', {
+            const response = await fetchAPI('/api/stripe/create', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name: fullName, email, amount }),
